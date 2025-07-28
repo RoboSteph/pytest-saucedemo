@@ -20,12 +20,7 @@ Demo python test automation suite using [pytest](https://pytest.org/) and [Playw
     pip install -r requirements.txt
     python -m playwright install
     ```
-
-3. Set environment variables for credentials (recommended):
-    ```sh
-    set SAUCE_PASSWORD=secret_sauce
-    ```
-
+    
 ## Running Tests
 
 ```sh

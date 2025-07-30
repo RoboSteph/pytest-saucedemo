@@ -9,10 +9,11 @@ def load_credentials():
 
 @pytest.fixture(scope="function")
 def page():
+    """Creates fresh browser page for each test"""
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=False)
-        context = browser.new_context() # ensures each test runs in fresh isolated browser context/profile
-        page = context.new_page() # new browser tab
+        context = browser.new_context()
+        page = context.new_page() 
         yield page
         context.close()
         browser.close()

@@ -3,9 +3,15 @@
 Demo python test automation suite using [pytest](https://pytest.org/) and [Playwright](https://playwright.dev/python/) for testing of [saucedemo.com](https://www.saucedemo.com/)
 
 ## Features
+
  - Automated login tests
  - UI assertions for menus and products
- - [Coming Soon] Parameterized tests for randomization and error handling
+ - Parameterized and negative login tests
+ - Randomized cart test
+
+## Purpose
+
+Created as a learning exercise 
 
 ## Setup 
 
@@ -20,7 +26,16 @@ Demo python test automation suite using [pytest](https://pytest.org/) and [Playw
     pip install -r requirements.txt
     python -m playwright install
     ```
-    
+
+## Configuration
+
+Create a `credentials.yaml` file in the project root with your login details:
+
+```yaml
+username: your_username
+password: your_password
+```
+
 ## Running Tests
 
 ```sh
@@ -32,3 +47,7 @@ pytest
 - Python
 - pytest
 - Playwright
+
+## Contact 
+
+[Github Profile](https://github.com/RoboSteph)

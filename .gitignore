@@ -8,3 +8,4 @@ __pycache__/
 playwright-report/
 *.log
 .DS_Store
+credentials.yaml

@@ -7,6 +7,10 @@ def load_credentials():
         credentials = yaml.safe_load(file)
     return credentials
 
+@pytest.fixture
+def credentials():
+    return load_credentials()
+
 @pytest.fixture(scope="function")
 def page():
     """Creates fresh browser page for each test"""
@@ -18,10 +22,8 @@ def page():
         context.close()
         browser.close()
 
-def login(browser):
-    credentials = load_credentials()
-    page = browser
+def login(page, username, password):
     page.goto("https://www.saucedemo.com/")
-    page.fill('input[data-test="username"]', credentials["username"])
-    page.fill('input[data-test="password"]', credentials["password"])
+    page.fill('input[data-test="username"]', username)
+    page.fill('input[data-test="password"]', password)
     page.click('input[data-test="login-button"]')

@@ -1,10 +1,11 @@
 import pytest
+import yaml
 import random
 import playwright.sync_api as sync_playwright
 from conftest import login
 
-def test_add_random_item_to_cart(page):
-    login(page)
+def test_add_random_item_to_cart(page, credentials):
+    login(page, credentials["username"], credentials["password"])
     # List of products should be visible
     assert page.is_visible('div.inventory_list')  # Ensure inventory list is visible
 
